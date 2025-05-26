@@ -1,13 +1,13 @@
 :root {
-  --primary-text-color: #1f2937; /* Tailwind gray-800 */
-  --secondary-text-color: #4b5563; /* Tailwind gray-600 */
-  --accent-color: #6b7280; /* Tailwind gray-500 */
-  --border-color: #d1d5db; /* Tailwind gray-300 */
+  --primary-text-color: #1f2937;
+  --secondary-text-color: #4b5563;
+  --accent-color: #6b7280;
+  --border-color: #d1d5db;
   --background-color: #fff;
   --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
   --card-hover-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
-  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-serif: Georgia, 'Times New Roman', Times, serif; /* Serif font for titles */
+  --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -52,7 +52,7 @@ body {
 
 .main-title {
   font-family: var(--font-serif);
-  font-weight: 700; /* Bold for serif often looks better */
+  font-weight: 700;
   font-size: clamp(2.8rem, 6vw, 3.5rem);
   margin: 0;
   line-height: 1.1;
@@ -66,7 +66,7 @@ body {
 }
 
 .subtitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-primary);
   font-size: clamp(1.2rem, 3.5vw, 1.4rem);
   color: var(--secondary-text-color);
   font-weight: 400;
@@ -206,7 +206,7 @@ body {
 }
 
 .law-article .law-header .law-desc { /* Law subtitle/description */
-  font-family: var(--font-serif);
+  font-family: var(--font-primary);
   color: var(--secondary-text-color);
   font-size: 1.15rem;
   margin-bottom: 0;
@@ -271,7 +271,7 @@ body {
 }
 
 .error-message { /* Hic Sunt Leones */
-  font-family: var(--font-serif);
+  font-family: var(--font-primary);
   font-size: 1.2rem;
   color: var(--secondary-text-color);
   margin-bottom: 2rem;
