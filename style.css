@@ -4,8 +4,8 @@
   --accent-color: #6b7280;
   --border-color: #d1d5db;
   --background-color: #fff;
-  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --card-hover-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 1px 3px 0 rgba(0,0,0,0.07), 0 1px 2px 0 rgba(0,0,0,0.04);
+  --card-hover-shadow: 0 4px 12px 0 rgba(0,0,0,0.08);
   --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   --font-serif: Georgia, 'Times New Roman', Times, serif;
 }
@@ -25,14 +25,12 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Container */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
-/* Header Styles */
 .header-flex {
   display: flex;
   flex-wrap: wrap;
@@ -61,7 +59,7 @@ body {
 
 .main-title span {
   display: block;
-  margin: 0 0 0.32em 0 !important; /* increased space between words */
+  margin-bottom: 0.32em;
   line-height: 1.1;
 }
 
@@ -73,7 +71,7 @@ body {
   margin: 0.5rem 0 0 0;
 }
 
-.divider {
+.divider, .main-title-divider {
   width: 100%;
   height: 1px;
   background: var(--border-color);
@@ -83,7 +81,7 @@ body {
 .main-title-divider {
   max-width: 420px;
   align-self: center;
-  margin-top: 1rem; /* Ensure spacing after title */
+  margin-top: 1rem;
   margin-bottom: 1.2rem;
 }
 
@@ -102,15 +100,14 @@ body {
   object-fit: contain;
 }
 
-/* Law Card Styles */
 .law-card {
   background: var(--background-color);
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   box-shadow: var(--card-shadow);
   margin: 2rem 0 0 0;
-  text-align: left; /* Titles inside card will be left aligned */
-  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  text-align: left;
+  transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s;
 }
 
 .law-card:hover {
@@ -126,17 +123,17 @@ body {
   padding: 1.8rem 1.5rem;
 }
 
-.law-card h2 { /* LAW I, LAW II etc. */
+.law-card h2 {
   font-family: var(--font-serif);
-  font-size: 1rem; /* Slightly larger for serif */
-  font-weight: 600; /* Bolder for serif */
+  font-size: 1rem;
+  font-weight: 600;
   margin-bottom: 0.4rem;
   color: var(--accent-color);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
-.law-card h3 { /* The actual law title */
+.law-card h3 {
   font-family: var(--font-serif);
   font-size: 1.65rem;
   font-weight: 700;
@@ -145,8 +142,8 @@ body {
   line-height: 1.25;
 }
 
-.law-desc { /* Short description on card - kept as Inter for readability */
-  font-family: var(--font-primary); /* Explicitly Inter */
+.law-desc {
+  font-family: var(--font-primary);
   color: var(--secondary-text-color);
   font-size: 1rem;
   margin-bottom: 0;
@@ -154,23 +151,22 @@ body {
   line-height: 1.5;
 }
 
-.law-divider { /* Small divider within the card */
+.law-divider {
   width: 3rem;
   height: 1px;
   background: var(--border-color);
   margin: 0.75rem 0;
 }
 
-/* Law Article Page Styles */
 .back-link {
   display: inline-block;
   color: var(--accent-color);
   text-decoration: none;
-  font-weight: 600; /* Using Inter */
+  font-weight: 600;
   font-family: var(--font-primary);
   margin-bottom: 2rem;
   padding: 0.5rem 0;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
 
 .back-link:hover {
@@ -182,7 +178,7 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.law-article .law-header h1 { /* LAW I. */
+.law-article .law-header h1 {
   font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 700;
@@ -196,7 +192,7 @@ body {
   margin: 0.5rem auto 1rem auto;
 }
 
-.law-article .law-header h2 { /* Law title */
+.law-article .law-header h2 {
   font-family: var(--font-serif);
   font-size: 1.7rem;
   color: var(--primary-text-color);
@@ -205,7 +201,7 @@ body {
   line-height: 1.3;
 }
 
-.law-article .law-header .law-desc { /* Law subtitle/description */
+.law-article .law-header .law-desc {
   font-family: var(--font-primary);
   color: var(--secondary-text-color);
   font-size: 1.15rem;
@@ -213,19 +209,18 @@ body {
   font-weight: 400;
 }
 
-.law-content { /* Body of the article, kept as Inter */
+.law-content {
   font-family: var(--font-primary);
   color: var(--secondary-text-color);
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
-.law-content p,
-.law-content ul {
+.law-content p, .law-content ul {
   margin-bottom: 1.5em;
 }
 
-.law-content h3 { /* Subheadings in article, kept as Inter */
+.law-content h3 {
   font-family: var(--font-primary);
   color: var(--primary-text-color);
   margin-top: 2.5rem;
@@ -242,7 +237,6 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* 404 Page Styles */
 .center {
   display: flex;
   flex-direction: column;
@@ -262,7 +256,7 @@ body {
   width: 90%;
 }
 
-.error-title { /* 404 */
+.error-title {
   font-family: var(--font-serif);
   font-size: 3.8rem;
   font-weight: 700;
@@ -270,7 +264,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.error-message { /* Hic Sunt Leones */
+.error-message {
   font-family: var(--font-primary);
   font-size: 1.2rem;
   color: var(--secondary-text-color);
@@ -281,48 +275,16 @@ body {
   margin-top: 0;
 }
 
-
-/* Responsive Adjustments */
 @media (max-width: 700px) {
-  .container {
-    padding: 1.5rem 1rem;
-  }
-
-  .header-flex {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-  }
-
-  .header-title {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .main-title-divider {
-    align-self: center;
-  }
-
-  .header-rooster {
-    width: 180px;
-    height: 180px;
-  }
-
-  .law-card a {
-    padding: 1.5rem 1.2rem;
-  }
-  .law-card {
-    text-align: center;
-  }
-  .law-card .law-divider {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  .container { padding: 1.5rem 1rem; }
+  .header-flex { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
+  .header-title { align-items: center; text-align: center; }
+  .main-title-divider { align-self: center; }
+  .header-rooster { width: 180px; height: 180px; }
+  .law-card a { padding: 1.5rem 1.2rem; }
+  .law-card { text-align: center; }
+  .law-card .law-divider { margin-left: auto; margin-right: auto; }
   .law-article .law-content h3,
   .law-article .law-content p,
-  .law-article .law-content ul {
-    text-align: left; 
-  }
+  .law-article .law-content ul { text-align: left; }
 }
