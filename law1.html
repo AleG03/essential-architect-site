@@ -4,8 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Law I - The Essential Architect</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --primary-text-color: #1f2937;
+      --secondary-text-color: #4b5563;
+      --accent-color: #6b7280;
+      --border-color: #d1d5db;
+      --background-color: #fff;
+      --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --font-serif: Georgia, 'Times New Roman', Times, serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-primary);
+      color: var(--primary-text-color);
+      background: var(--background-color);
+      line-height: 1.6;
+      animation: fadeIn 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .back-link {
+      display: inline-block;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-family: var(--font-primary);
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: var(--primary-text-color);
+    }
+    .law-article .law-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .law-article .law-header h1 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-text-color);
+      margin-bottom: 0.25rem;
+    }
+    .divider { /* General .divider styles, used by .law-article .law-header .divider */
+      width: 100%;
+      height: 1px;
+      background: var(--border-color);
+      margin: 0.8rem 0 1rem 0; /* Base margin from original .divider rule in style.css */
+    }
+    .law-article .law-header .divider { /* Specific styles for the divider in law1.html's header */
+      max-width: 200px;
+      margin: 0.5rem auto 1rem auto; /* Overrides .divider's margin */
+      /* Inherits height, background from .divider */
+    }
+    .law-article .law-header h2 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      color: var(--primary-text-color);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .law-desc { /* General .law-desc styles */
+      font-family: var(--font-primary);
+      color: var(--secondary-text-color);
+      font-size: 1rem;
+      margin-bottom: 0;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .law-article .law-header .law-desc { /* Specific styles for .law-desc in law1.html's header */
+      font-size: 1.15rem; /* Overrides font-size from general .law-desc */
+      /* Inherits other properties from .law-desc */
+    }
+    .law-content {
+      font-family: var(--font-primary);
+      color: var(--secondary-text-color);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .law-content p, .law-content ul {
+      margin-bottom: 1.5em;
+    }
+    .law-content h3 {
+      font-family: var(--font-primary);
+      color: var(--primary-text-color);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .law-content ul {
+      padding-left: 1.5rem;
+    }
+    .law-content li {
+      margin-bottom: 0.75rem;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 1.5rem 1rem; }
+      .law-article .law-content h3,
+      .law-article .law-content p,
+      .law-article .law-content ul { text-align: left; }
+    }
+  </style>
 </head>
 <body>
   <div class="container">

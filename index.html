@@ -5,8 +5,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Essential Architect</title>
   <meta name="description" content="Simple laws for sustainable architectures.">
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --primary-text-color: #1f2937;
+      --secondary-text-color: #4b5563;
+      --accent-color: #6b7280;
+      --border-color: #d1d5db;
+      --background-color: #fff;
+      --card-shadow: 0 1px 3px 0 rgba(0,0,0,0.07), 0 1px 2px 0 rgba(0,0,0,0.04);
+      --card-hover-shadow: 0 4px 12px 0 rgba(0,0,0,0.08);
+      --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --font-serif: Georgia, 'Times New Roman', Times, serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-primary);
+      color: var(--primary-text-color);
+      background: var(--background-color);
+      line-height: 1.6;
+      animation: fadeIn 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .header-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+    .header-title {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .main-title {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(2.8rem, 6vw, 3.5rem);
+      margin: 0;
+      line-height: 1.1;
+      color: var(--primary-text-color);
+    }
+    .main-title span {
+      display: block;
+      margin-bottom: 0.32em;
+      line-height: 1.1;
+    }
+    .subtitle {
+      font-family: var(--font-primary);
+      font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+      color: var(--secondary-text-color);
+      font-weight: 400;
+      margin: 0.5rem 0 0 0;
+    }
+    .divider, .main-title-divider { /* Shared base for .divider and .main-title-divider */
+      width: 100%;
+      height: 1px;
+      background: var(--border-color);
+      margin: 0.8rem 0 1rem 0;
+    }
+    .main-title-divider { /* Specifics for .main-title-divider, overrides parts of shared style if element has both classes */
+      max-width: 420px;
+      align-self: center;
+      margin-top: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .header-rooster {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 340px;
+      height: 340px;
+    }
+    .rooster { /* Styles the SVG container div */
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .law-card {
+      background: var(--background-color);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      box-shadow: var(--card-shadow);
+      margin: 2rem 0 0 0;
+      text-align: left;
+      transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s;
+    }
+    .law-card:hover {
+      box-shadow: var(--card-hover-shadow);
+      border-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+    .law-card a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      padding: 1.8rem 1.5rem;
+    }
+    .law-card h2 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--accent-color);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .law-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--primary-text-color);
+      line-height: 1.25;
+    }
+    .law-desc { /* Used by p.law-desc in .law-card */
+      font-family: var(--font-primary);
+      color: var(--secondary-text-color);
+      font-size: 1rem;
+      margin-bottom: 0;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .law-divider { /* Used in .law-card */
+      width: 3rem;
+      height: 1px;
+      background: var(--border-color);
+      margin: 0.75rem 0;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 1.5rem 1rem; }
+      .header-flex { flex-direction: column; text-align: center; gap: 1.5rem; } /* align-items: center; is same as base */
+      .header-rooster { width: 180px; height: 180px; }
+      .law-card a { padding: 1.5rem 1.2rem; }
+      .law-card { text-align: center; }
+      .law-card .law-divider { margin-left: auto; margin-right: auto; }
+    }
+  </style>
 </head>
 <body>
   <div class="container">

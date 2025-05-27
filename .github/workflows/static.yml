@@ -37,14 +37,8 @@ jobs:
         with:
           node-version: '20'
       
-      - name: Install CSS minifier
-        run: npm install -g csso-cli
-      
       - name: Install HTML minifier
         run: npm install -g html-minifier
-      
-      - name: Minify CSS
-        run: csso style.css --output style.css
       
       - name: Minify HTML
         run: |
