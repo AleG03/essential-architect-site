@@ -1,0 +1,302 @@
+/* ================================================================
+   THE ESSENTIAL ARCHITECT — Shared Design System
+   ================================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Palette */
+  --bg:      #f5f2eb;
+  --border:  #d6d2c8;
+  --text:    #18160f;
+  --muted:   #6e6b62;
+
+  /* Typography */
+  --font:    'Times New Roman', Times, Georgia, serif;
+  --t-xs:    clamp(.72rem,  .66rem + .3vw,  .85rem);
+  --t-sm:    clamp(.875rem, .82rem + .28vw, 1rem);
+  --t-base:  clamp(1rem,    .95rem + .25vw, 1.15rem);
+  --t-lg:    clamp(1.25rem, 1.05rem + .9vw, 1.9rem);
+
+  /* Spacing */
+  --sp-2: .5rem;   --sp-3: .75rem;  --sp-4: 1rem;    --sp-5: 1.25rem;
+  --sp-6: 1.5rem;  --sp-8: 2rem;    --sp-10: 2.5rem; --sp-12: 3rem;
+  --sp-16: 4rem;   --sp-20: 5rem;
+
+  /* Motion & Layout */
+  --trans: 160ms cubic-bezier(.16, 1, .3, 1);
+  --w:     1100px;
+}
+
+/* ── BASE ── */
+
+html { -webkit-font-smoothing: antialiased; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--t-base);
+  line-height: 1.65;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* Focus — visible only for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── NAVIGATION ── */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: var(--sp-4) clamp(var(--sp-6), 4vw, var(--sp-16));
+  gap: var(--sp-2) var(--sp-6);
+}
+
+.nav-brand {
+  font-size: var(--t-sm);
+  font-variant: small-caps;
+  letter-spacing: .1em;
+  white-space: nowrap;
+  transition: opacity var(--trans);
+}
+.nav-brand:hover { opacity: .55; }
+
+.nav-links {
+  display: flex;
+  gap: clamp(var(--sp-4), 2vw, var(--sp-10));
+  list-style: none;
+  overflow: visible;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: var(--t-sm);
+  font-variant: small-caps;
+  letter-spacing: .08em;
+  white-space: nowrap;
+  opacity: .5;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid transparent;
+  transition: opacity var(--trans);
+}
+.nav-links a:hover { opacity: 1; }
+.nav-links a.active { opacity: 1; border-color: var(--text); }
+
+/* ── HOMEPAGE HERO ── */
+
+.hero {
+  max-width: var(--w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr clamp(200px, 30vw, 400px);
+  align-items: center;
+  gap: var(--sp-8);
+  padding: 0 clamp(var(--sp-6), 4vw, var(--sp-16));
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, .8rem + 5vw, 5rem);
+  line-height: .92;
+  letter-spacing: -.01em;
+  margin-bottom: var(--sp-8);
+}
+
+.hero-rule {
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  margin-bottom: var(--sp-5);
+}
+.hero-head { display: inline-block; }
+
+.hero-sub {
+  font-size: var(--t-base);
+  color: var(--muted);
+  max-width: 40ch;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.hero-illo { align-self: end; }
+.rooster   { width: 100%; height: auto; }
+
+/* Disable scrolling for index page */
+body.no-scroll {
+  overflow: hidden;
+  height: 100dvh;
+  overscroll-behavior: none;
+  display: flex;
+  flex-direction: column;
+}
+
+body.no-scroll .hero {
+  flex: 1;
+  height: auto;
+}
+
+/* ── LAW PAGE LAYOUT ── */
+
+.law-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(var(--sp-12), 8vw, var(--sp-20))
+           clamp(var(--sp-6), 4vw, var(--sp-16));
+}
+
+.law-content { text-align: center; }
+
+.law-rule-top {
+  width: 70px;
+  height: 2px;
+  background: var(--text);
+  margin: 0 auto var(--sp-8);
+}
+
+.law-num {
+  font-size: var(--t-lg);
+  letter-spacing: .03em;
+  margin-bottom: var(--sp-3);
+}
+
+.law-title {
+  font-size: var(--t-base);
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: var(--sp-8);
+}
+
+.law-rule-bottom {
+  width: 70px;
+  height: 2px;
+  background: var(--text);
+  margin: 0 auto var(--sp-10);
+}
+
+.law-body {
+  text-align: left;
+  font-size: var(--t-base);
+  line-height: 1.82;
+}
+.law-body p + p { margin-top: var(--sp-6); }
+.law-body a {
+  border-bottom: 1px solid var(--muted);
+  transition: opacity var(--trans);
+}
+.law-body a:hover { opacity: .65; }
+
+/* ── KEY PRINCIPLES & PRACTICAL APPLICATION ── */
+
+.law-section-label {
+  font-size: var(--t-lg);
+  letter-spacing: .01em;
+  margin: var(--sp-12) 0 var(--sp-4);
+}
+
+.law-principles {
+  list-style: none;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+.law-principles li {
+  padding: var(--sp-4) 0;
+  /* border-bottom: 1px solid var(--border); */
+  line-height: 1.75;
+}
+/* .law-principles li:first-child { border-top: 1px solid var(--border); } */
+.law-principles h3 {
+  font-size: var(--t-base);
+  font-weight: 700;
+  margin-bottom: .2rem;
+}
+
+.law-applications {
+  list-style: disc;
+  padding-left: var(--sp-6);
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+.law-applications li {
+  padding: var(--sp-3) 0;
+  line-height: 1.75;
+}
+.law-applications li::marker {
+  color: var(--muted);
+}
+
+/* ── PREV / NEXT NAV ── */
+
+.law-nav {
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-6) clamp(var(--sp-6), 4vw, var(--sp-16));
+}
+
+.law-nav-btn {
+  font-size: var(--t-xs);
+  font-variant: small-caps;
+  letter-spacing: .08em;
+  opacity: .55;
+  transition: opacity var(--trans);
+}
+.law-nav-btn:hover { opacity: 1; }
+
+.law-nav-placeholder {
+  font-size: var(--t-xs);
+  font-variant: small-caps;
+  letter-spacing: .08em;
+  opacity: .18;
+  cursor: default;
+  user-select: none;
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+    padding-top: var(--sp-8);
+  }
+  /* Keep the illustration visible on small viewports but reduce its size
+     and stack it under the content to avoid layout overflow. */
+  .hero-illo {
+    display: block;
+    align-self: start;
+    margin-top: var(--sp-6);
+  }
+  .rooster {
+    width: clamp(120px, 36vw, 240px);
+    height: auto;
+  }
+  .law-content { text-align: left; }
+  .law-rule-top,
+  .law-rule-bottom { margin-left: 0; }
+}
+
+/* ── PRINT ── */
+
+@media print {
+  .site-nav, .law-nav { display: none; }
+  body { font-size: 11pt; }
+  .law-wrap { min-height: auto; padding: 2rem 0; }
+}

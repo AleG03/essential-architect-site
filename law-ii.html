@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Law II. Complexity must live somewhere — The Essential Architect</title>
+<meta name="description" content="Every application carries a baseline of intrinsic complexity that cannot be eliminated, only moved.">
+<meta name="theme-color" content="#f5f2eb">
+<meta property="og:title" content="Law II — The Essential Architect">
+<meta property="og:description" content="Complexity must live somewhere.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">The Essential Architect</a>
+  <ul class="nav-links" role="list">
+    <li><a href="law-i.html">Law I</a></li>
+    <li><a href="law-ii.html" class="active">Law II</a></li>
+    <li><a href="law-iii.html">Law III</a></li>
+  </ul>
+</nav>
+
+<main class="law-wrap">
+  <article class="law-content">
+    <div class="law-rule-top" aria-hidden="true"></div>
+    <h1 class="law-num">Law II.</h1>
+    <p class="law-title">Complexity must live somewhere.</p>
+    <div class="law-rule-bottom" aria-hidden="true"></div>
+    <div class="law-body">
+      <p>Every application carries a baseline of intrinsic complexity that cannot be eliminated, only moved. The architectural decision is not whether complexity exists, but who will bear it: the developer, the platform engineer, or the end user.</p>
+
+      <h2 class="law-section-label">Key Principles</h2>
+      <ul class="law-principles">
+        <li>
+          <h3>Irreducible Complexity.</h3>
+          There is a minimum amount of complexity inherent in every problem. No abstraction, framework, or tool can make it disappear; it can only shift it from one layer to another.
+        </li>
+        <li>
+          <h3>Deliberate Allocation.</h3>
+          Decide explicitly where complexity should live. Hiding it from the developer often pushes it to the platform. Hiding it from the platform often pushes it to the user. The worst outcome is when no one decides and complexity leaks everywhere.
+        </li>
+        <li>
+          <h3>Protect the End User.</h3>
+          When in doubt, absorb complexity on the engineering side. A system that is hard to build but simple to use is always preferable to one that is easy to build but painful to operate.
+        </li>
+      </ul>
+
+      <h2 class="law-section-label">Practical Application</h2>
+      <ul class="law-applications">
+        <li>Before simplifying one layer, ask where the complexity will resurface.</li>
+        <li>Map your system's complexity: identify what is handled by the developer, the platform, and the user. Look for imbalances.</li>
+        <li>When evaluating an abstraction, verify it is not just deferring complexity to the next person in the chain.</li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<nav class="law-nav" aria-label="Law navigation">
+  <a href="law-i.html" class="law-nav-btn">&#8592; Previous</a>
+  <a href="law-iii.html" class="law-nav-btn">Next &#8594;</a>
+</nav>
+
+</body>
+</html>
